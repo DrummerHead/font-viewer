@@ -3,7 +3,7 @@
 #
 # The script will use ftxinstalledfonts' output to create a
 # JS array of all the installed font's families
-# that will get written to ./js/fileList.js
+# that will get written to ./js/fontList.js
 
 
 raw_font_list = %x[ftxinstalledfonts -fiM]
@@ -21,8 +21,8 @@ families_array = families
   .reduce(:+)
   .insert(0, 'var fontList = [')
 
-File.open('./js/fileList.js', 'w') do |file|
+File.open('./js/fontList.js', 'w') do |file|
   file.write(families_array)
 end
 
-puts "\nFont list file written at ./js/fileList\n\n"
+puts "\nFont list file written at ./js/fontList.js\n\n"

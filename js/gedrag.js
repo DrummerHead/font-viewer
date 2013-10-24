@@ -15,6 +15,9 @@ var ngFonts = angular.module('ngFonts', [])
 /* Controllers
  * ========================================= */
 
+function mainController($scope){
+}
+
 /* End Controllers */
 
 
