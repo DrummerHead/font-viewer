@@ -1,12 +1,12 @@
-<main role='main'>
+<main id='font-list' role='main'>
   <ul>
-    <li ng-repeat='font in fonts | filter: query'>
-      <h3>{{font.family}}</h3>
+    <li ng-repeat='font in fonts | filter: query' ng-style='{"font-family" : "\"" + font.family + "\""}'>
+      <h3 title='{{font.family}}'>{{font.family}}</h3>
     </li>
   </ul>
 </main>
 
-<nav>
+<nav id='font-menu'>
   <h1>Font Viewer</h1>
 
   <label for='search'>Search</label>
