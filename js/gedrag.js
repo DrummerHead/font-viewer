@@ -31,7 +31,7 @@ ngFonts.config(['$routeProvider', '$locationProvider', function($routeProvider, 
  * ========================================= */
 
 function mainController($scope, $http){
-  $http.get('js/fontList.json').success(function(data){
+  $http.get('js/data/fontList.json').success(function(data){
     $scope.fonts = data;
   });
 }

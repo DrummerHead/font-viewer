@@ -1,1 +1,24 @@
-<h1>Sabeeeeeee</h1>
+<main role='main'>
+  <ul>
+    <li ng-repeat='font in fonts | filter: query'>
+      <h3>{{font.family}}</h3>
+    </li>
+  </ul>
+</main>
+
+<nav>
+  <h1>Font Viewer</h1>
+
+  <label for='search'>Search</label>
+  <input type='text' ng-model='query' id='search' role='search'>
+
+  <label for='sampleText'>Sample text</label>
+  <input type='text' id='sampleText'>
+
+  <h2>Favourites</h2>
+  <ul>
+    <li>Star a type to select favourites</li>
+  </ul>
+
+  <button>Compare favourites</button>
+</nav>
