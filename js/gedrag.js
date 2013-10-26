@@ -6,6 +6,21 @@
 
 var ngFonts = angular.module('ngFonts', [])
 
+ngFonts.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+    $routeProvider.when('/', {
+      templateUrl: 'partials/home.html',
+      controller: homeController
+    });
+    /* * /
+    $routeProvider.when('/img:params', {
+      templateUrl: 'partials/image.html',
+      controller: imageController
+    });
+    /* */
+    $routeProvider.otherwise({
+      redirectTo: '/'
+    });
+  }]);
 
 /* End App module */
 
@@ -15,7 +30,14 @@ var ngFonts = angular.module('ngFonts', [])
 /* Controllers
  * ========================================= */
 
-function mainController($scope){
+function mainController($scope, $http){
+  $http.get('js/fontList.json').success(function(data){
+    $scope.fonts = data;
+  });
+}
+
+
+function homeController($scope){
 }
 
 /* End Controllers */

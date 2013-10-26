@@ -15,7 +15,7 @@
 </head>
 <body data-ng-controller='mainController'>
 
-<main role='main'>
+<main role='main' data-ng-view>
 </main>
 
 <div id='moribus'>
@@ -23,8 +23,6 @@
   <script>
     window.angular || document.write("<script src='js/vendor/angular.min.js'><\/script>");
   </script>
-  <script src='js/fontList.js'></script>
-  <script>console.log(fontList);</script>
   <script src='js/gedrag.js'></script>
 
   <!--
