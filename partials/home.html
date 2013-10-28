@@ -1,13 +1,15 @@
 <main id='font-list' role='main'>
   <ul>
     <li ng-repeat='font in fonts | filter: query' ng-style='{"font-family" : "\"" + font.family + "\""}'>
-      <h3 title='{{font.family}}'>{{font.family}}</h3>
-      <ul class='samples'>
-        <li class='normal'>{{sample}}</li>
-        <li class='uppercase'>{{sample}}</li>
-        <li class='bold'>{{sample}}</li>
-        <li class='italics'>{{sample}}</li>
-      </ul>
+      <a href='#/font/{{font.id}}'>
+        <h3 title='{{font.family}}'>{{font.family}}</h3>
+        <ul class='samples'>
+          <li class='normal'>{{sample}}</li>
+          <li class='uppercase'>{{sample}}</li>
+          <li class='bold'>{{sample}}</li>
+          <li class='italics'>{{sample}}</li>
+        </ul>
+      </a>
     </li>
   </ul>
 </main>

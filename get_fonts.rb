@@ -8,21 +8,26 @@
 
 raw_font_list = %x[ftxinstalledfonts -fiM]
 
-families = raw_font_list
-  .gsub(/^[^\t]*\t([^\t]*)\t[^\t]*\t(.*)/, '{"family" : "\2", "fixed" : \1},')
+jsoned_lines = raw_font_list
+  .gsub(/^[^\t]*\t([^\t]*)\t[^\t]*\t(.*)/, '{~id~"family" : "\2", "fixed" : \1},')
   .gsub('no', 'false')
   .gsub('YES', 'true')
 
-families_array = families
-  .gsub(/(.*)(,)/m, '\1]')
+families_array = jsoned_lines
   .lines
   .drop(1)
   .uniq
+  .each_with_index do |line, i|
+    line.gsub!("~id~","\"id\" : #{i}, ")
+  end
+
+families_json = families_array
   .reduce(:+)
+  .gsub(/(.*)(,)/m, '\1]')
   .insert(0, '[')
 
 File.open('./js/data/fontList.json', 'w') do |file|
-  file.write(families_array)
+  file.write(families_json)
 end
 
 puts "\nFont list file written at ./js/data/fontList.json\n\n"

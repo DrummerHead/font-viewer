@@ -11,12 +11,10 @@ ngFonts.config(['$routeProvider', '$locationProvider', function($routeProvider, 
       templateUrl: 'partials/home.html',
       controller: homeController
     });
-    /* * /
-    $routeProvider.when('/img:params', {
-      templateUrl: 'partials/image.html',
-      controller: imageController
+    $routeProvider.when('/font/:param', {
+      templateUrl: 'partials/font.html',
+      controller: fontController
     });
-    /* */
     $routeProvider.otherwise({
       redirectTo: '/'
     });
@@ -39,6 +37,10 @@ function mainController($scope, $http){
 
 
 function homeController($scope){
+}
+
+function fontController($scope, $routeParams){
+  $scope.font = $routeParams.param
 }
 
 /* End Controllers */

@@ -544,8 +544,16 @@ button[disabled].alert:focus,
   color: #272727;
 }
 #font-list > ul > li {
-  padding: 1.5em .75em;
   border-bottom: 1px solid #eee;
+}
+#font-list > ul > li > a {
+  display: block;
+  padding: 1.5em .75em;
+  text-decoration: none;
+  color: #272727;
+}
+#font-list > ul > li > a:hover {
+  background-color: #ffde00;
 }
 #font-list > ul > li h3 {
   margin: 0;
