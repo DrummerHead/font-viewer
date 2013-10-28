@@ -34,6 +34,7 @@ function mainController($scope, $http){
   $http.get('js/data/fontList.json').success(function(data){
     $scope.fonts = data;
   });
+  $scope.sample = 'The quick brown fox jumps over the lazy dog. Grumpy wizards make a toxic brew for the jovial queen.';
 }
 
 

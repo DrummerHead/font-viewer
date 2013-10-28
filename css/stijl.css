@@ -541,6 +541,7 @@ button[disabled].alert:focus,
   font-size: 1.5em;
   padding: 0;
   margin: 0;
+  color: #272727;
 }
 #font-list > ul > li {
   padding: 1.5em .75em;
@@ -549,6 +550,29 @@ button[disabled].alert:focus,
 #font-list > ul > li h3 {
   margin: 0;
 }
+.samples {
+}
+.normal {
+  font-weight: normal;
+  text-transform: none;
+  font-style: normal;
+}
+.uppercase {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-style: normal;
+}
+.bold {
+  font-weight: bold;
+  text-transform: none;
+  font-style: normal;
+}
+.italics {
+  font-weight: normal;
+  text-transform: none;
+  font-style: italic;
+}
+
 #font-menu {
   position: fixed;
   top: 0;
