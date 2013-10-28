@@ -39,8 +39,9 @@ function mainController($scope, $http){
 function homeController($scope){
 }
 
-function fontController($scope, $routeParams){
-  $scope.font = $routeParams.param
+function fontController($scope, $routeParams, $filter){
+  $scope.font = $scope.fonts[$routeParams.param]
+  //$scope.font = $filter('filter')($scope.fonts, {id: $routeParams.param}, true); // greedy as fuck
 }
 
 /* End Controllers */

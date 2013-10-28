@@ -225,7 +225,7 @@ button,
   border: 1px solid #2284a1;
   margin: 0 0 1.25em;
   font-size: 1em;
-  font-family: inherit;
+  font-family: sans-serif;
   line-height: normal;
   font-weight: bold;
   text-decoration: none;
@@ -509,6 +509,22 @@ button[disabled].alert:focus,
  * Subscriptions
  * - - - - - - - */
 
+/*
+{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*/
+
+#character-set:before,
+#character-set:after {
+  content: '';
+  display: table;
+}
+#character-set:after {
+  clear: both;
+}
 /* End Subscriptions */
 
 
@@ -534,7 +550,7 @@ button[disabled].alert:focus,
  * - - - - - - - */
 
 #font-list {
-  margin: 1em 27em 1em 1em;
+  padding: 1em 27em 1em 1em;
 }
 #font-list > ul {
   list-style-type: none;
@@ -559,6 +575,12 @@ button[disabled].alert:focus,
   margin: 0;
 }
 .samples {
+}
+.samples li {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .normal {
   font-weight: normal;
@@ -593,6 +615,52 @@ button[disabled].alert:focus,
 }
 
 /* End Specific page: Home */
+
+
+
+
+/*
+ * Specific page: Font details
+ * - - - - - - - */
+
+#font-detail {
+  padding: 1em;
+}
+#font-detail header {
+  padding: 1.75em 0 1em 0;
+  position: relative;
+}
+#font-detail header h1 {
+  margin: 0;
+  font-size: 5em;
+  line-height: 1;
+}
+#font-detail header .button {
+  position: absolute;
+  top: 1.75em;
+  right: 1em;
+}
+#character-set,
+#character-set li {
+  border-width: 1px;
+  border-color: #eee;
+}
+#character-set {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 2.5em;
+  border-style: solid none none solid;
+}
+#character-set li {
+  float: left;
+  width: 2em;
+  line-height: 2;
+  border-style: none solid solid none;
+  text-align: center;
+}
+
+/* End Specific page: Font details */
 
 
 
