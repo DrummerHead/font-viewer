@@ -500,6 +500,22 @@ button[disabled].alert:focus,
 .button[disabled].alert:focus {
   background-color: #c60f13;
 }
+.two-columns {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 1em;
+     -moz-column-gap: 1em;
+          column-gap: 1em;
+}
+.three-columns {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 1.5em;
+     -moz-column-gap: 1.5em;
+          column-gap: 1.5em;
+}
 /* End Modular */
 
 
@@ -518,11 +534,14 @@ button[disabled].alert:focus,
 */
 
 #character-set:before,
-#character-set:after {
+#character-set:after,
+#more-info:before,
+#more-info:after {
   content: '';
   display: table;
 }
-#character-set:after {
+#character-set:after,
+#more-info:after {
   clear: both;
 }
 /* End Subscriptions */
@@ -624,7 +643,7 @@ button[disabled].alert:focus,
  * - - - - - - - */
 
 #font-detail {
-  padding: 1em;
+  padding: 2em;
 }
 #font-detail header {
   padding: 1.75em 0 1em 0;
@@ -649,7 +668,7 @@ button[disabled].alert:focus,
   list-style-type: none;
   padding: 0;
   margin: 0;
-  font-size: 2.5em;
+  font-size: 2.2em;
   border-style: solid none none solid;
 }
 #character-set li {
@@ -658,6 +677,85 @@ button[disabled].alert:focus,
   line-height: 2;
   border-style: none solid solid none;
   text-align: center;
+}
+#more-info {
+  margin: 4em 0 0 0;
+}
+#links,
+#different-sizes {
+  border-top: 1em solid #ffde00;
+}
+#links {
+  float: left;
+  width: 20em;
+  margin: 0 2em 0 0;
+  font-family: sans-serif;
+}
+#links ul {
+  padding: 0;
+  margin: 1.2em 0 0 0;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  list-style-type: none;
+}
+#links li {
+  margin: .7em 0em;
+}
+#links a {
+  color: #2ba6cb;
+  text-decoration: none;
+}
+#links a:hover {
+  text-decoration: underline;
+}
+#different-sizes {
+  float: left;
+  width: calc(100% - 22em);
+}
+#different-sizes div {
+  position: relative;
+  padding: .1em 0;
+}
+#different-sizes h4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1em;
+  font-weight: normal;
+  font-family: sans-serif;
+  color: #555;
+}
+#different-sizes p:first-of-type {
+  margin-top: 52px;
+}
+.em5l1 p {
+  font-size: 5em;
+  line-height: 1;
+  margin-bottom: .8em;
+}
+.em25l12 p {
+  font-size: 2.5em;
+  line-height: 1.2;
+}
+.em175l125 p {
+  font-size: 1.75em;
+  line-height: 1.25;
+}
+.em14l13 p {
+  font-size: 1.4em;
+  line-height: 1.3;
+}
+.em12l13 p {
+  font-size: 1.2em;
+  line-height: 1.3;
+}
+.em1l14 p {
+  font-size: 1em;
+  line-height: 1.4;
+}
+.em9l14 p {
+  font-size: .9em;
+  line-height: 1.4;
 }
 
 /* End Specific page: Font details */
