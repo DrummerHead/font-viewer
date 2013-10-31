@@ -580,6 +580,7 @@ button[disabled].alert:focus,
 }
 #font-list > ul > li {
   border-bottom: 1px solid #eee;
+  position: relative;
 }
 #font-list > ul > li > a {
   display: block;
@@ -620,6 +621,28 @@ button[disabled].alert:focus,
   font-weight: normal;
   text-transform: none;
   font-style: italic;
+}
+.favourite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  line-height: 1em;
+  font-size: .75em;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.favourite:hover {
+  background-color: #ffde00;
+}
+.favourite:before  {
+  content: '\2606';
+  margin: 0 .25em;
+  font-style: normal;
+  font-size: 1.5em;
+}
+.i-love-it:before {
+  content: '\2605';
 }
 
 #font-menu {

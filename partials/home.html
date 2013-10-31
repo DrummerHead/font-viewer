@@ -10,6 +10,7 @@
           <li class='italics'>{{sample}}</li>
         </ul>
       </a>
+      <span class='favourite' ng-click='favourite(font.id)' ng-class='{"i-love-it" : isFavourite(font.id) }'>favourite</span>
     </li>
   </ul>
 </main>
@@ -25,7 +26,9 @@
 
   <h2>Favourites</h2>
   <ul>
-    <li>Star a type to select favourites</li>
+    <li ng-repeat='favourite in favouriteList()'>
+      {{favourite}}
+    </li>
   </ul>
 
   <button>Compare favourites</button>

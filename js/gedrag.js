@@ -36,7 +36,21 @@ function mainController($scope, $http){
 }
 
 
-function homeController($scope){
+function homeController($scope, FavouriteFonts){
+  $scope.isFavourite = function(id){
+    return FavouriteFonts.checkFavourite(id)
+  }
+  $scope.favouriteList = function(){
+    return FavouriteFonts.getFavourites()
+  }
+  $scope.favourite = function(id){
+    if($scope.isFavourite(id)){
+      FavouriteFonts.removeFavourite(id);
+    }
+    else{
+      FavouriteFonts.addFavourite(id);
+    }
+  }
 }
 
 function fontController($scope, $routeParams, $filter){
@@ -67,6 +81,36 @@ function fontController($scope, $routeParams, $filter){
 
 /* Services
  * ========================================= */
+
+ngFonts.factory('FavouriteFonts', function(){
+  var favouriteFonts = [40, 25, 66, 77];
+
+  return {
+    getFavourites : function(){
+      return favouriteFonts;
+    },
+    addFavourite : function(font){
+      favouriteFonts.push(font)
+    },
+    checkFavourite : function(font){
+      var isFont = favouriteFonts.filter(function(f){
+        return f == font
+      })
+      if(isFont.length){
+        return true;
+      }
+      else{
+        return false;
+      }
+    },
+    removeFavourite : function(font){
+      var newFavouriteFonts = favouriteFonts.filter(function(f){
+        return f != font
+      });
+      favouriteFonts = newFavouriteFonts;
+    }
+  }
+})
 
 /* End Services */
 
