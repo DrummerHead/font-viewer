@@ -15,6 +15,10 @@ ngFonts.config(['$routeProvider', '$locationProvider', function($routeProvider, 
       templateUrl: 'partials/font.html',
       controller: fontController
     });
+    $routeProvider.when('/favourites/', {
+      templateUrl: 'partials/favourites.html',
+      controller: homeController
+    });
     $routeProvider.otherwise({
       redirectTo: '/'
     });
@@ -32,17 +36,24 @@ function mainController($scope, $http){
   $http.get('js/data/fontList.json').success(function(data){
     $scope.fonts = data;
   });
-  $scope.sample = 'The quick brown fox jumps over the lazy dog. Grumpy wizards make a toxic brew for the jovial queen.';
 }
 
 
-function homeController($scope, FavouriteFonts){
+function homeController($scope, FavouriteFonts, SampleText){
+  $scope.sample = SampleText.getSample();
+
+  $scope.saveSample = function(){
+    SampleText.setSample($scope.sample);
+  }
+
   $scope.isFavourite = function(id){
     return FavouriteFonts.checkFavourite(id)
-  }
+  };
+
   $scope.favouriteList = function(){
     return FavouriteFonts.getFavourites()
-  }
+  };
+
   $scope.favourite = function(id){
     if($scope.isFavourite(id)){
       FavouriteFonts.removeFavourite(id);
@@ -50,12 +61,13 @@ function homeController($scope, FavouriteFonts){
     else{
       FavouriteFonts.addFavourite(id);
     }
-  }
+  };
+
   $scope.filterFavourites = function(element){
     return $scope.favouriteList().some(function(el, indx, arr){
       return element.id == el
     });
-  }
+  };
 }
 
 function fontController($scope, $routeParams, $filter){
@@ -113,6 +125,19 @@ ngFonts.factory('FavouriteFonts', function(){
         return f != font
       });
       favouriteFonts = newFavouriteFonts;
+    }
+  }
+})
+
+ngFonts.factory('SampleText', function(){
+  var sampleText = 'The quick brown fox jumps over the lazy dog. Grumpy wizards make a toxic brew for the jovial queen.';
+
+  return {
+    getSample : function(){
+      return sampleText;
+    },
+    setSample : function(text){
+      sampleText = text;
     }
   }
 })

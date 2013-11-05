@@ -536,12 +536,15 @@ button[disabled].alert:focus,
 #character-set:before,
 #character-set:after,
 #more-info:before,
-#more-info:after {
+#more-info:after,
+.data:before,
+.data:after {
   content: '';
   display: table;
 }
 #character-set:after,
-#more-info:after {
+#more-info:after,
+.data:after {
   clear: both;
 }
 /* End Subscriptions */
@@ -793,6 +796,78 @@ button[disabled].alert:focus,
 }
 
 /* End Specific page: Font details */
+
+
+
+
+/*
+ * Specific page: Favourites
+ * - - - - - - - */
+
+#favourite-list {
+  padding: 5.3em 2em .5em;
+}
+#favourite-list > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#favourite-list > ul > li {
+  margin: 0 0 5em 0;
+}
+.data {
+  font-family: sans-serif;
+}
+.data h4 {
+  float: left;
+  width: calc( 100% -  3em );
+  margin: 0 .5em 0 0;
+  text-align: right;
+  font-size: 1em;
+  font-weight: normal;
+  color: #555;
+}
+.remove-favourite {
+  float: left;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  font-size: 1.25em;
+  text-align: center;
+  color: #ccc;
+  cursor: pointer;
+}
+.remove-favourite:hover {
+  color: #444;
+}
+#favourite-list big {
+  font-size: 5em;
+  line-height: 1;
+}
+#favourite-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1em 2em;
+  background-color: rgba(220, 220, 220, .5);
+}
+#favourite-menu input {
+  float: left;
+  height: 2.7rem;
+  margin: 0;
+  width: calc( 100% - 9rem );
+}
+#favourite-menu .button {
+  width: 7rem;
+  float: right;
+  padding: 0;
+  margin: 0;
+  height: 2.5rem;
+  line-height: 2.7;
+}
+
+/* End Specific page: Favourites */
 
 
 
