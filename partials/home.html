@@ -25,9 +25,9 @@
   <input type='text' ng-model='sample' id='sampleText'>
 
   <h2>Favourites</h2>
-  <ul>
-    <li ng-repeat='favourite in favouriteList()'>
-      {{favourite}}
+  <ul id='favourites'>
+    <li ng-repeat='font in fonts | filter:filterFavourites'>
+      {{font.family}}
     </li>
   </ul>
 

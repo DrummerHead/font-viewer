@@ -655,6 +655,17 @@ button[disabled].alert:focus,
   overflow: auto;
   background-color: rgba(220, 220, 220, .5);
 }
+#font-menu h2 {
+  margin: 1.75em 0 .5em;
+}
+#favourites {
+  list-style-type: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+#favourites li {
+  margin: .25em 0;
+}
 
 /* End Specific page: Home */
 

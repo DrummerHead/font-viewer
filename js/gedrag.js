@@ -51,6 +51,11 @@ function homeController($scope, FavouriteFonts){
       FavouriteFonts.addFavourite(id);
     }
   }
+  $scope.filterFavourites = function(element){
+    return $scope.favouriteList().some(function(el, indx, arr){
+      return element.id == el
+    });
+  }
 }
 
 function fontController($scope, $routeParams, $filter){
