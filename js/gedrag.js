@@ -100,7 +100,7 @@ function fontController($scope, $routeParams, $filter){
  * ========================================= */
 
 ngFonts.factory('FavouriteFonts', function(){
-  var favouriteFonts = [40, 25, 66, 77];
+  var favouriteFonts = [];
 
   return {
     getFavourites : function(){
