@@ -28,7 +28,7 @@
   <script type='text/ng-template' id='partials/home.html'>
     <main id='font-list' role='main'>
       <ul>
-        <li ng-repeat='font in fonts | filter: query' ng-style='{"font-family" : "\"" + font.family + "\""}'>
+        <li data-ng-repeat='font in fonts | filter: query' data-ng-style='{"font-family" : "\"" + font.family + "\""}'>
           <a href='#/font/{{font.id}}'>
             <h3 title='{{font.family}}'>{{font.family}}</h3>
             <ul class='samples'>
@@ -38,7 +38,7 @@
               <li class='italics'>{{sample}}</li>
             </ul>
           </a>
-          <span class='favourite' ng-click='favourite(font.id)' ng-class='{"i-love-it" : isFavourite(font.id) }'>favourite</span>
+          <span class='favourite' data-ng-click='favourite(font.id)' data-ng-class='{"i-love-it" : isFavourite(font.id) }'>favourite</span>
         </li>
       </ul>
     </main>
@@ -47,14 +47,14 @@
       <h1>Font Viewer</h1>
 
       <label for='search'>Search</label>
-      <input type='text' ng-model='query' id='search' role='search'>
+      <input type='text' data-ng-model='query' id='search' role='search'>
 
       <label for='sampleText'>Sample text</label>
-      <input type='text' ng-model='sample' ng-change='saveSample()' id='sampleText'>
+      <input type='text' data-ng-model='sample' data-ng-change='saveSample()' id='sampleText'>
 
       <h2>Favourites</h2>
       <ul id='favourites'>
-        <li ng-repeat='font in fonts | filter:filterFavourites'>
+        <li data-ng-repeat='font in fonts | filter:filterFavourites'>
           {{font.family}}
         </li>
       </ul>
@@ -64,7 +64,7 @@
   </script>
 
   <script type='text/ng-template' id='partials/font.html'>
-    <main id='font-detail' role='main' ng-style='{"font-family" : "\"" + font.family + "\""}'>
+    <main id='font-detail' role='main' data-ng-style='{"font-family" : "\"" + font.family + "\""}'>
       <header>
         <h1>{{font.family}}</h1>
         <a href='#/' class='button'>Go back</a>
@@ -359,10 +359,10 @@
   <script type='text/ng-template' id='partials/favourites.html'>
     <main id='favourite-list' role='main'>
       <ul>
-        <li ng-repeat='font in fonts | filter:filterFavourites' ng-style='{"font-family" : "\"" + font.family + "\""}'>
+        <li data-ng-repeat='font in fonts | filter:filterFavourites' data-ng-style='{"font-family" : "\"" + font.family + "\""}'>
           <div class='data'>
             <h4>{{font.family}}</h4>
-            <span class='remove-favourite' ng-click='favourite(font.id)'>&#215;</span>
+            <span class='remove-favourite' data-ng-click='favourite(font.id)'>&#215;</span>
           </div>
           <big>{{sample}}</big>
         </li>
@@ -370,12 +370,11 @@
     </main>
 
     <nav id='favourite-menu'>
-      <input type='text' ng-model='sample' ng-change='saveSample()' id='sampleText'>
+      <input type='text' data-ng-model='sample' data-ng-change='saveSample()' id='sampleText'>
       <a href='#/' class='button'>Go Back</a>
     </nav>
   </script>
 
-  <!--
   <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -384,7 +383,6 @@
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
     ga('create','UA-1030009-5');ga('send','pageview');
   </script>
-  -->
 </div>
 
 </body>
