@@ -38,9 +38,9 @@
 {"id" : 37, "family" : "Marker Felt", "fixed" : false},
 {"id" : 38, "family" : "Apple Symbols", "fixed" : false},
 {"id" : 39, "family" : "Herculanum", "fixed" : false},
-{"id" : 38, "family" : "Plantagenet Cherokee", "fixed" : false},
-{"id" : 39, "family" : "Impact", "fixed" : false},
-{"id" : 40, "family" : "Andale Mono", "fixed" : true},
-{"id" : 41, "family" : "Brush Script MT", "fixed" : false},
-{"id" : 42, "family" : "Brush Script Std", "fixed" : false},
-{"id" : 43, "family" : "Geneva", "fixed" : false}]
+{"id" : 40, "family" : "Plantagenet Cherokee", "fixed" : false},
+{"id" : 41, "family" : "Impact", "fixed" : false},
+{"id" : 42, "family" : "Andale Mono", "fixed" : true},
+{"id" : 43, "family" : "Brush Script MT", "fixed" : false},
+{"id" : 44, "family" : "Brush Script Std", "fixed" : false},
+{"id" : 45, "family" : "Geneva", "fixed" : false}]
