@@ -9,9 +9,9 @@
 raw_font_list = %x[ftxinstalledfonts -fiM]
 
 jsoned_lines = raw_font_list
-  .gsub(/^[^\t]*\t([^\t]*)\t[^\t]*\t(.*)/, '{~id~"family" : "\2", "fixed" : \1},')
-  .gsub('no', 'false')
-  .gsub('YES', 'true')
+  .gsub(/^[^\t]*\t([^\t]*)\t[^\t]*\t(.*)/, '{~id~"family" : "\2", "fixed" : ~\1~},')
+  .gsub('~no~', 'false')
+  .gsub('~YES~', 'true')
 
 families_array = jsoned_lines
   .lines
