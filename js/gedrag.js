@@ -32,8 +32,8 @@ ngFonts.config(['$routeProvider', '$locationProvider', function($routeProvider, 
 /* Controllers
  * ========================================= */
 
-function mainController($scope, $http){
-  $http.get('js/data/fontList.json').success(function(data){
+function mainController($scope, GetFontList){
+  GetFontList.get().success(function(data){
     $scope.fonts = data;
   });
 }
@@ -70,9 +70,10 @@ function homeController($scope, FavouriteFonts, SampleText){
   };
 }
 
-function fontController($scope, $routeParams, $filter){
-  $scope.font = $scope.fonts[$routeParams.param]
-  //$scope.font = $filter('filter')($scope.fonts, {id: $routeParams.param}, true); // greedy as fuck
+function fontController($scope, $routeParams, GetFontList){
+  GetFontList.get().success(function(data){
+    $scope.font = data[$routeParams.param]
+  });
 }
 
 /* End Controllers */
@@ -98,6 +99,14 @@ function fontController($scope, $routeParams, $filter){
 
 /* Services
  * ========================================= */
+
+ngFonts.factory('GetFontList', function($http){
+  return {
+    get : function(){
+      return $http({method : 'GET', url : 'js/data/fontList.json', cache : true})
+    }
+  }
+})
 
 ngFonts.factory('FavouriteFonts', function(){
   var favouriteFonts = [];
