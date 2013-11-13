@@ -109,7 +109,13 @@ ngFonts.factory('GetFontList', function($http){
 })
 
 ngFonts.factory('FavouriteFonts', function(){
-  var favouriteFonts = [];
+  if(!localStorage.getItem('favouriteFonts')){
+    var favouriteFonts = [];
+    localStorage.setItem('favouriteFonts', JSON.stringify(favouriteFonts))
+  }
+  else{
+    var favouriteFonts = JSON.parse(localStorage.getItem('favouriteFonts'));
+  }
 
   return {
     getFavourites : function(){
@@ -117,29 +123,32 @@ ngFonts.factory('FavouriteFonts', function(){
     },
     addFavourite : function(font){
       favouriteFonts.push(font)
+      localStorage.setItem('favouriteFonts', JSON.stringify(favouriteFonts))
     },
     checkFavourite : function(font){
       var isFont = favouriteFonts.filter(function(f){
         return f == font
       })
-      if(isFont.length){
-        return true;
-      }
-      else{
-        return false;
-      }
+      return isFont.length ? true : false;
     },
     removeFavourite : function(font){
       var newFavouriteFonts = favouriteFonts.filter(function(f){
         return f != font
       });
       favouriteFonts = newFavouriteFonts;
+      localStorage.setItem('favouriteFonts', JSON.stringify(newFavouriteFonts))
     }
   }
 })
 
 ngFonts.factory('SampleText', function(){
-  var sampleText = 'The quick brown fox jumps over the lazy dog. Grumpy wizards make a toxic brew for the jovial queen.';
+  if(!localStorage.getItem('sampleText')){
+    var sampleText = 'The quick brown fox jumps over the lazy dog. Grumpy wizards make a toxic brew for the jovial queen.';
+    localStorage.setItem('sampleText', sampleText);
+  }
+  else{
+    var sampleText = localStorage.getItem('sampleText');
+  }
 
   return {
     getSample : function(){
@@ -147,6 +156,7 @@ ngFonts.factory('SampleText', function(){
     },
     setSample : function(text){
       sampleText = text;
+      localStorage.setItem('sampleText', text);
     }
   }
 })
