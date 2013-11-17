@@ -44,35 +44,32 @@ function homeController($scope, FavouriteFonts, SampleText){
 
   $scope.saveSample = function(){
     SampleText.setSample($scope.sample);
-  }
+  };
 
   $scope.isFavourite = function(id){
-    return FavouriteFonts.checkFavourite(id)
+    return FavouriteFonts.checkFavourite(id);
   };
 
   $scope.favouriteList = function(){
-    return FavouriteFonts.getFavourites()
+    return FavouriteFonts.getFavourites();
   };
 
   $scope.favourite = function(id){
-    if($scope.isFavourite(id)){
-      FavouriteFonts.removeFavourite(id);
-    }
-    else{
-      FavouriteFonts.addFavourite(id);
-    }
+    return FavouriteFonts.toggleFavourite(id);
   };
 
   $scope.filterFavourites = function(element){
     return $scope.favouriteList().some(function(el, indx, arr){
-      return element.id == el
+      return element.id == el;
     });
   };
 }
 
 function fontController($scope, $routeParams, GetFontList){
   GetFontList.get().success(function(data){
-    $scope.font = data[$routeParams.param]
+    $scope.font = data.filter(function(font){
+      return font.id === parseInt($routeParams.param)
+    })[0];
   });
 }
 
@@ -130,6 +127,14 @@ ngFonts.factory('FavouriteFonts', function(){
         return f == font
       })
       return isFont.length ? true : false;
+    },
+    toggleFavourite : function(font){
+      if(this.checkFavourite(font)){
+        this.removeFavourite(font);
+      }
+      else{
+        this.addFavourite(font);
+      }
     },
     removeFavourite : function(font){
       var newFavouriteFonts = favouriteFonts.filter(function(f){
