@@ -32,9 +32,16 @@ a:hover {
 img {
   border: 0;
 }
+h1,
+h2 {
+  color: #474747;
+}
 h1 {
   margin: .67em 0;
   font-size: 2em;
+}
+h2 {
+  font-size: 1.25em;
 }
 button,
 input,
@@ -85,7 +92,6 @@ input::-moz-focus-inner {
 label {
   display: block;
   margin-bottom: .1875em;
-  font-size: .875em;
   font-weight: 500;
   color: #4d4d4d;
   cursor: pointer;
@@ -132,7 +138,8 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-textarea {
+textarea,
+select {
   display: block;
   width: 100%;
   height: 2.3125em;
@@ -154,6 +161,9 @@ textarea {
           box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
   -webkit-appearance: none;
   -webkit-border-radius: 0;
+}
+select {
+  -webkit-appearance: menulist;
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -655,16 +665,34 @@ button[disabled].alert:focus,
   top: 0;
   right: 0;
   bottom: 0;
-  width: 22em;
-  padding: 1em 2em;
+  width: 26em;
   overflow: auto;
   background-color: rgba(220, 220, 220, .5);
 }
+#font-menu header,
+#font-menu section,
+#font-menu footer {
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: #f7f7f7;
+  padding: 1em 2em;
+}
+#font-menu header {
+  padding-top: 1.5em;
+}
+#font-menu section {
+}
+#font-menu footer {
+}
+#font-menu h1 {
+  margin: 0;
+}
 #font-menu h2 {
-  margin: 1.75em 0 .5em;
+  margin: 0;
 }
 #favourites {
-  list-style-type: none;
+  list-style-type: decimal-leading-zero;
+  list-style-position: inside;
   margin: 0 0 1em 0;
   padding: 0;
 }

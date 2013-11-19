@@ -44,22 +44,48 @@
     </main>
 
     <nav id='font-menu'>
-      <h1>Font Viewer</h1>
+      <header>
+        <h1>Font Viewer</h1>
+      </header>
+      <section>
+        <label for='search'>
+          <h2>Search</h2>
+        </label>
+        <input type='text' data-ng-model='query' id='search' role='search'>
+      </section>
+      <section>
+        <label for='sampleText'>
+          <h2>Sample text</h2>
+        </label>
+        <input type='text' data-ng-model='sample' data-ng-change='saveSample()' id='sampleText'>
+        <label>Reset sample text</label>
+        <select data-ng-model='sample' data-ng-change='saveSample()'>
+          <option>The quick brown fox jumps over the lazy dog. Grumpy wizards make a toxic brew for the jovial queen.</option>
+          <option>Quick zephyrs blow, vexing daft Jim. Sphinx of black quartz, judge my vow.</option>
+          <option>Fat hag dwarves quickly zap jinx mob. How quickly daft jumping zebras vex.</option>
+          <option>El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja.</option>
+          <option>El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío; añoraba a su querido cachorro.</option>
+          <option>Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.</option>
+          <option>Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich</option>
+          <option>Τάχιστη αλώπηξ βαφής ψημένη γη, δρασκελίζει υπέρ νωθρού κυνός</option>
+          <option>Jeżu klątw, spłódź Finom część gry hańb!</option>
+        </select>
+      </section>
+      <section>
+        <h2>Favourites</h2>
+        <ul id='favourites'>
+          <li data-ng-repeat='font in fonts | filter:filterFavourites'>
+            {{font.family}}
+          </li>
+        </ul>
+        <a href='#/favourites' class='button'>Compare favourites</a>
+      </section>
+      <footer>
+        <h2>
+          <a href='https://github.com/DrummerHead/font-viewer/blob/master/README.md' rel='external'>Help</a>
+        </h2>
+      </footer>
 
-      <label for='search'>Search</label>
-      <input type='text' data-ng-model='query' id='search' role='search'>
-
-      <label for='sampleText'>Sample text</label>
-      <input type='text' data-ng-model='sample' data-ng-change='saveSample()' id='sampleText'>
-
-      <h2>Favourites</h2>
-      <ul id='favourites'>
-        <li data-ng-repeat='font in fonts | filter:filterFavourites'>
-          {{font.family}}
-        </li>
-      </ul>
-
-      <a href='#/favourites' class='button'>Compare favourites</a>
     </nav>
   </script>
 
