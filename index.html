@@ -27,7 +27,7 @@
 
   <script type='text/ng-template' id='partials/home.html'>
     <main id='font-list' role='main'>
-      <ul>
+      <ul data-ng-class='{"hide-titles": hideTitles}'>
         <li data-ng-repeat='font in fonts | filter: query' data-ng-style='{"font-family" : "\"" + font.family + "\""}'>
           <a href='#/font/{{font.id}}'>
             <h3 title='{{font.family}}'>{{font.family}}</h3>
@@ -58,8 +58,9 @@
           <h2>Sample text</h2>
         </label>
         <input type='text' data-ng-model='sample' data-ng-change='saveSample()' id='sampleText'>
-        <label>Reset sample text</label>
-        <select data-ng-model='sample' data-ng-change='saveSample()'>
+
+        <label for='reset-sample-text'>Reset sample text</label>
+        <select data-ng-model='sample' data-ng-change='saveSample()' id='reset-sample-text'>
           <option>The quick brown fox jumps over the lazy dog. Grumpy wizards make a toxic brew for the jovial queen.</option>
           <option>Quick zephyrs blow, vexing daft Jim. Sphinx of black quartz, judge my vow.</option>
           <option>Fat hag dwarves quickly zap jinx mob. How quickly daft jumping zebras vex.</option>
@@ -70,6 +71,11 @@
           <option>Τάχιστη αλώπηξ βαφής ψημένη γη, δρασκελίζει υπέρ νωθρού κυνός</option>
           <option>Jeżu klątw, spłódź Finom część gry hańb!</option>
         </select>
+
+        <label>
+          <input type='checkbox' data-ng-model='hideTitles'>
+          Hide font names
+        </label>
       </section>
       <section>
         <h2>Favourites</h2>

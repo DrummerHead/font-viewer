@@ -607,6 +607,9 @@ button[disabled].alert:focus,
 #font-list > ul > li h3 {
   margin: 0;
 }
+.hide-titles h3 {
+  visibility: hidden;
+}
 .samples {
   padding: 0;
   margin: 0;
