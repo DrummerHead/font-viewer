@@ -535,13 +535,11 @@ button[disabled].alert:focus,
  * Subscriptions
  * - - - - - - - */
 
-/*
-{
+#fork {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-*/
 
 #character-set:before,
 #character-set:after,
@@ -682,6 +680,35 @@ button[disabled].alert:focus,
 }
 #font-menu header {
   padding-top: 1.5em;
+  position: relative;
+  overflow: hidden;
+}
+#fork {
+  position: absolute;
+  top: -3.7em;
+  right: -3.7em;
+  width: 7em;
+  height: 7em;
+  padding: 5.5em 0 0 0;
+  font-size: 1em;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #dfdfdf;
+  color: #b0b0b0;
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 277ms ease-in;
+     -moz-transition: all 277ms ease-in;
+          transition: all 277ms ease-in;
+}
+#fork:hover {
+  top: -3.47em;
+  right: -3.47em;
+  background-color: #ccc;
+  color: #fff;
 }
 #font-menu section {
 }
