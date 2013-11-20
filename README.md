@@ -1,10 +1,19 @@
 # Font viewer
 
-This webapp has the following features:
+This is a free webapp that you run locally on your machine (server script included) to see a list of all your fonts, for sampling, comparison and selection.
+
+If you are interested to see how this app works and looks, there's an [online version](http://mcdlr.com/font-viewer/) with only a list of default OS X fonts.
+
+The idea is that you can actually see all your installed fonts by downloading Apple Font Tool Suite and running a script so the webapp can make use of that list (instructions below)
+
+
+## Features
 
 * Lists all installed fonts’ family names and sample text (using the font)
 * Sample text can be modified
+* Sample text can be reset with a provided list of pangrams in different languages
 * List of family fonts can be filtered by a search query
+* Title of font family can be hidden so you can concentrate just on the sample text
 * Favourite fonts can be selected and then compared to each other
 * A single font’s characters, different font size sample text and links can be displayed
 
@@ -27,7 +36,7 @@ Install [Apple Font Tool Suite](https://developer.apple.com/fonts/) (Only availa
 
 First, you must get the project files. If you know how to use git, you know what to do. Alternatively, you can [Download the project as a ZIP file](https://github.com/DrummerHead/font-viewer/archive/master.zip).
 
-The project comes with a list of fonts generally installed by default in OS X. To get the list of your installed fonts access the project’s root folder on your [terminal](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line) (if you open the terminal, type `cd `, drag&drop the folder to the terminal and press enter you are set) and type:
+The project comes with a list of fonts generally installed by default in OS X. To get the list of your installed fonts access the project’s root folder on your [terminal](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line) (if you open the terminal, type `cd ` (space after cd), drag&drop the folder to the terminal and press enter you are set) and type:
 
 ```
 ruby get_fonts.rb
@@ -42,6 +51,8 @@ ruby servo.rb
 ```
 
 Go to your preferred browser and access http://localhost:8080/font-viewer/
+
+The terminal window will be running the server until you close it; for this press `control + c` and then you can close the terminal window if you want.
 
 
 ## What about Linux and Windows?
