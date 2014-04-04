@@ -63,6 +63,10 @@ function homeController($scope, FavouriteFonts, SampleText){
       return element.id == el;
     });
   };
+
+  $scope.resetFavourites = function(){
+    return FavouriteFonts.resetFavourites();
+  };
 }
 
 function fontController($scope, $routeParams, GetFontList){
@@ -142,6 +146,10 @@ ngFonts.factory('FavouriteFonts', function(){
       });
       favouriteFonts = newFavouriteFonts;
       localStorage.setItem('favouriteFonts', JSON.stringify(newFavouriteFonts))
+    },
+    resetFavourites : function(){
+      favouriteFonts = [];
+      localStorage.setItem('favouriteFonts', JSON.stringify(favouriteFonts));
     }
   }
 })
