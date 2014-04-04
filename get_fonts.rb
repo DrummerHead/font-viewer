@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # This script depends on Apple Font Tool Suite command tools
 # get it at https://developer.apple.com/fonts/
 #
