@@ -1,3 +1,7 @@
+### Node ###
+
+/node_modules
+
 ### vim ###
 .*.s[a-w][a-z]
 *.un~

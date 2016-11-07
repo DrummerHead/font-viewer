@@ -1,0 +1,28 @@
+{
+  "name": "font-viewer",
+  "version": "1.0.0",
+  "description": "App to browse installed fonts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrummerHead/font-viewer.git"
+  },
+  "keywords": [
+    "font",
+    "viewer",
+    "logo",
+    "test"
+  ],
+  "author": "DrummerHead <drummerhead@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DrummerHead/font-viewer/issues"
+  },
+  "homepage": "https://github.com/DrummerHead/font-viewer#readme",
+  "dependencies": {
+    "font-manager": "^0.2.2"
+  }
+}
